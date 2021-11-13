@@ -10,10 +10,11 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Link from "@material-ui/core/Link";
+import dotenv from "dotenv"
 
 import { useHistory } from "react-router-dom";
 import AnimeNewPage from "./AnimeNewPage.js";
-
+dotenv.config();
 const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(1),
@@ -92,11 +93,11 @@ function Anime() {
       setError("");
       // let obj={id,rating};
       let ids=[];
-      let promises=[];
-      for (let x = 0; x < res.data.data.documents.length; x++) {
+      let promises=[];const url = process.env.REACT_APP_SERVER_URL;
 
+      for (let x = 0; x < res.data.data.documents.length; x++) {
           promises.push(axios.post(
-            "http://localhost:8080/anime/getReviews",
+            `${url}/anime/getReviews`,
             { anime_id: res.data.data.documents[x].id.toString() }
             ).then((response)=>{
               ids.push({...res.data.data.documents[x], rating:response.data.rating});

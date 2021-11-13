@@ -11,7 +11,8 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Link from "@material-ui/core/Link";
 import { useHistory } from "react-router-dom";
-
+import dotenv from "dotenv"
+dotenv.config();
 const useStyles = makeStyles((theme) => ({}));
 
 function AnimeNewPage(props) {
@@ -21,8 +22,10 @@ function AnimeNewPage(props) {
   const [showReview, setShowReview] = useState(false);
   const [rev, setRev] = useState(0);
   const [review, setReview] = useState("");
+  const uri = process.env.REACT_APP_SERVER_URL;
+
   const onClick = async () => {
-    let url = "http://localhost:8080/anime/getReviews";
+    let url = `${uri}/anime/getReviews`;
     let res = await axios.post(`${url}`, {
       anime_id: e.id,
     });
@@ -31,8 +34,9 @@ function AnimeNewPage(props) {
     }
     setShowReview(true);
   };
+
   const addReview = async () => {
-    let url = "http://localhost:8080/anime/addReview";
+    let url = `${uri}/anime/addReview`;
     console.log(e.id);
     let username = localStorage.getItem("username");
     console.log(username);
@@ -53,7 +57,7 @@ function AnimeNewPage(props) {
     setRev(0);
     console.log(res);
   };
-  useEffect(() => {addReview()}, [allReviews]);
+  useEffect(() => {}, []);
   return (
     <div className="animeNewPage">
       <div className="description">

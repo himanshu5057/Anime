@@ -49,7 +49,7 @@ function Login() {
     <div className="root">
       <div className="register">
         <h2>Anime</h2>
-        <form className="form">
+        <form className="form1">
           <TextField
             id="email"
             label="Email"

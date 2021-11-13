@@ -21,11 +21,13 @@ const register = async (req, res) => {
       email: req.body.email,
       password: password,
     });
-
-    if (createUser) {
+console.log("working");
+console.log(createUser);
+    if (createUser!=null) {
+      console.log("hello");
       return res.json({
         id: createUser._id,
-        username:username,
+        username:createUser.username,
         result: true,
         message: "User registered successfully",
       });

@@ -27,10 +27,10 @@ function Register() {
   const onClick = async () => {
     setisLoading(true);
     let res = await register(username, email, password);
-    // console.log(res);
-    localStorage.setItem("username", res.data.username);
+    console.log(res.data);
     setisLoading(false);
     if (res.data.result) {
+      localStorage.setItem("username", res.data.username);
       history.push("/");
     } else {
       seterror(res.data.message);
@@ -50,7 +50,7 @@ function Register() {
     <div className="root">
       <div className="register">
         <h2>Anime</h2>
-        <form className="form" onSubmit={onClick}>
+        <form className="form1" onSubmit={onClick}>
           <TextField
             id="username"
             label="Username"
@@ -90,7 +90,7 @@ function Register() {
           Register
         </Button>
         <div className={classes.signin}>
-          <h5>Don't have an account?</h5>
+          <h5>Already have an account?</h5>
           <h5
             onClick={() => {
               history.push("/login");

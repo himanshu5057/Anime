@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import dotenv from "dotenv"
+dotenv.config();
 export const AuthContext = React.createContext();
 // const axios = require("axios");
-const url = "http://localhost:8080";
+const url = process.env.REACT_APP_SERVER_URL;
 let id;
 function SignMethod({ children }) {
+  console.log(url);
   const [currentUser, setcurrentUser] = useState();
   const [isLoading, setisLoading] = useState(true);
   const history = useHistory();
