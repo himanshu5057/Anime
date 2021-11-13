@@ -1,0 +1,120 @@
+.root{
+    height: 100vh;
+    width: 100vw;
+    background-color:#144e5a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register{
+    height:65%;
+    width:50%;
+    background-color: #f8f7c1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+.padding{
+    padding: 5px;
+}
+.form{
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    width: 45%;
+}
+.todo{
+    position: relative;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input{
+    display: flex;
+    flex-direction: row;
+    padding-top: 5%;
+}
+.main{
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f7c1;
+    overflow-y: auto;
+    /* padding: 2%; */
+}
+.searchBar{
+    height:30%;
+    width:100%;
+}
+.animeData{
+    height:70%;
+    width:100%;
+    display: block;
+    flex-direction: column;
+
+}
+.anime{
+    margin: 3%;
+    height:30%;
+    display: flex;
+    width:90%;
+    color:black;
+}
+
+.anime:hover{
+    cursor: pointer;
+}
+.animeCard{
+    display:flex;
+    width:100%;
+}
+.animeDes{
+    margin: 5px;
+    margin-left:8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.animeNewPage{
+    height:95vh;
+    width:97vw;
+    
+}
+.description{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* text-align: center; */
+    margin:1%;
+}
+.reviews{
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.all-add-review{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.addReview{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+.checked {
+    color: orange;
+  }
