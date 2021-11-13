@@ -4,12 +4,22 @@ import express, { json } from "express";
 // import { urlencoded, json as _json } from "body-parser";
 import helmet from "helmet";
 import morgan from "morgan";
+import path from "path";
+
 // import connectdb from "./configs/database.js";
 // connectdb.connect();
 import connectDB from "./configs/database.js";
-connectDB();
-const app = express();
 
+connectDB();
+const __dirname = path.resolve();
+console.log(__dirname);
+const app = express();
+app.use(express.static(path.join(__dirname, 'build')));
+
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(

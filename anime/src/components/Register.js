@@ -93,7 +93,7 @@ function Register() {
           <h5>Don't have an account?</h5>
           <h5
             onClick={() => {
-              history.push("/signin");
+              history.push("/login");
             }}
             style={{ color: "blue", paddingLeft: "5px", cursor: "pointer" }}
           >
